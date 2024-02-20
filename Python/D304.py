@@ -1,16 +1,11 @@
 word = input()
-a = ' '
-ws = a.join(word)
-wsl = ws.split(' ')
-udl = ["_"for value in range(1, len(word)+1)]
-pos = 0
-while wsl != udl:
-  pos = 0
-  s = input()
-  for c in wsl:
-    if s == c:
-      udl[pos] = s
-    pos += 1
-  for b in udl:
-      print(b,end="")
-  print("")
+show = ['_'] * len(word)
+word = list(word)
+while True:
+    guess = input()
+    for i in range(len(word)):
+        if guess == word[i]:
+            show[i] = guess
+    print(''.join(show))
+    if word == show:
+        break
