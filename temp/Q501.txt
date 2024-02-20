@@ -1,0 +1,13 @@
+select drink_name, brand_name from drink where drink_type='Tea' and price=(select max(price) from drink where drink_type='Tea');
+select count(*) from sales inner join drink on sales.drink_id=drink.drink_id and drink_type='Water' and year(transaction_date)=2023;
+select round(cast(count(*) as float)/153, 4) as average from drink inner join sales on sales.drink_id=drink.drink_id and drink_type='Soda' and transaction_date between '2023-05-01' and '2023-09-30';
+select drink_name, count(*) from drink inner join sales on drink.drink_id=sales.drink_id where brand_name='Best Taste' group by drink_name order by count(*) desc limit 1;
+
+select drink_name, count(*) from drink inner join sales on drink.drink_id=sales.drink_id where brand_name='Best Taste' group by drink_name having count(*) >= ALL (select count(*) from drink inner join sales on drink.drink_id=sales.drink_id where brand_name='Best Taste' group by drink_name);
+
+https://www.w3schools.com/sql/trysql.asp?filename=trysql_select_all
+SELECT ShipperID, count(*) FROM Orders group by ShipperID having count(*)>= all(SELECT count(*) FROM Orders group by ShipperID);
+
+create view ex1 as select sum(price) as exp1 from drink inner join sales on drink.drink_id=sales.drink_id where month(transaction_date)=8;
+create view ex2 as select sum(price) as exp2 from drink inner join sales on drink.drink_id=sales.drink_id where month(transaction_date)=7;
+select exp1-exp2 from ex1,ex2;
