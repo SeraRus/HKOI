@@ -1,5 +1,4 @@
-levels = input()
-levels = int(int(levels) / 2)
+levels = int(int(input()) / 2)
 levels2 = levels
 reverse = []
 for i in range(levels + 1):
@@ -13,5 +12,5 @@ for i in range(levels + 1):
     reverse.append(temp)
 del reverse[-1]
 reverse.reverse()
-for m in reverse:
-    print(m)
+if reverse:
+    print(*reverse, sep='\n')
