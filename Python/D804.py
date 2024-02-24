@@ -15,5 +15,4 @@ if len(First) != 0:
 else:
     Temp1 += Second
 
-for i in Temp1:
-    print(i, end=" ")
+print(*Temp1, sep=' ')
