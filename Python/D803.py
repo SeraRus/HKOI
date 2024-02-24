@@ -12,7 +12,5 @@ for i in range(len(nums)):
             break
     if bol == 0:
         sortedList.append(temp)
-    for u in sortedList:
-        print(u, end=' ')
-    print()
+    print(*sortedList, end='\n')
     bol = 0
