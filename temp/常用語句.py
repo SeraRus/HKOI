@@ -50,3 +50,11 @@ def selection_sort(alist):
                 min_num = u
         listed.append(alist.pop(min_num))
     return listed
+
+#冒泡排序
+def bubble_sort(alist):
+    for i in range(len(alist)):
+        for u in range(i, len(alist)-1):
+            if alist[u+1] < alist[u]:
+                alist[u + 1], alist[u] = alist[u], alist[u + 1]
+    return alist
