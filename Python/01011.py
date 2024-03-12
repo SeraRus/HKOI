@@ -1,6 +1,5 @@
 screen = [[' '] * 80 for _ in range(25)]
-inputNum = int(input())
-for i in range(inputNum):
+for i in range(int(input())):
     square = input()
     squareChar = square[0]
     squareXPosL, squareYPosL, squareXPosR, squareYPosR = map(int, square[1:].split())
