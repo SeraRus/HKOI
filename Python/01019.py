@@ -1,29 +1,14 @@
 import heapq
-
-def calculate_minimum_time(numbers):
-    heap = []
-    for num in numbers:
-        heapq.heappush(heap, num)
-    
-    total_time = 0
-    while len(heap) > 1:
-        num1 = heapq.heappop(heap)
-        num2 = heapq.heappop(heap)
-        
-        new_num = num1 + num2
-        total_time += new_num
-        
-        heapq.heappush(heap, new_num)
-    
-    return total_time
-
-N = int(input())
-
-numbers = []
-for _ in range(N):
-    num = int(input())
-    numbers.append(num)
-
-minimum_time = calculate_minimum_time(numbers)
-
-print(minimum_time)
+n = int(input())
+d = []
+for _ in range(n):
+    d.append(int(input()))
+heapq.heapify(d)
+cnt = 0
+for _ in range(n - 1):
+    n1 = heapq.heappop(d)
+    n2 = heapq.heappop(d)
+    acc = n1 + n2
+    cnt += acc
+    heapq.heappush(d, acc)
+print(cnt)
