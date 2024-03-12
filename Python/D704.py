@@ -8,7 +8,7 @@ for x in range(0, s):
 x, y = tuple(map(int, input().split()))
 if y == 0:
     print(len(llist)+1)
-    print("%d %d"%(x, f))
+    print(x, f)
     print(-1)
 else:
     clls = llist[f-1]
@@ -20,5 +20,5 @@ else:
     clls[1] = len(llist)+1
     llist.append([x, ocl])
     print(f)
-    print("%d %d"%tuple(llist[-1]))
-    print("%d %d %d"%(cele, llist[cele-1][0], llist[cele-1][1]))
+    print(*tuple(llist[-1]))
+    print(cele, llist[cele-1][0], llist[cele-1][1])
