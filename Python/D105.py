@@ -1,8 +1,5 @@
-d1 = input().split(" ")
-d2 = input().split(" ")
-
-d1 = [int(x) for x in d1]
-d2 = [int(x) for x in d2]
+d1 = list(map(int, input().split()))
+d2 = list(map(int, input().split()))
 
 if d1 > d2:
   print("After")
